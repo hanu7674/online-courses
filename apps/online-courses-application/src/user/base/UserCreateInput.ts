@@ -19,6 +19,14 @@ import { InputJsonValue } from "../../types";
 @InputType()
 class UserCreateInput {
   @ApiProperty({
+    required: true,
+    type: String,
+  })
+  @IsString()
+  @Field(() => String)
+  email!: string;
+
+  @ApiProperty({
     required: false,
     type: String,
   })
